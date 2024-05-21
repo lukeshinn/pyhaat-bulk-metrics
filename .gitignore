@@ -1,0 +1,5 @@
+__pycache__
+hudl_repos/competitive/*
+venv
+*.log
+*.csv
