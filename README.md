@@ -9,6 +9,7 @@
 
 ### Example
 From the repo root
+
 `python3 main.py 6/20/2023 --seed competitive`
 - You will see in the test.csv generated that feedproduces, profiles, and organizations have low REST coverage numbers (0/5.1/0)
 `python3 main.py 5/20/2024`
