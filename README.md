@@ -26,3 +26,4 @@ From the repo root
 - Add args params several places instead of hard coding business units/dates/etc
 - if the repo older than the date provided that could cause wierdness. Unsure of behavior
 - write new csv file with name of date ran instead of appending to test.csv
+- update seed data with a larger list of repos
