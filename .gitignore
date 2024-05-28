@@ -2,3 +2,4 @@ hudl_repos/*
 __pycache__
 venv/*
 *.log
+*.csv
