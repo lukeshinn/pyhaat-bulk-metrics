@@ -33,7 +33,12 @@ def main(args):
     # set repo state to the desired date for analysis
     set_historical_repo_state("competitive", args.date_to_run_analysis_on)
     # analyze repo group after each repository has been set to the desired states date
-    analyze_business_unit("competitive")
+    if args.rest:
+        analyze_business_unit("-r", args.date_to_run_analysis_on)
+    elif args.bifrost:
+        analyze_business_unit("-b", args.date_to_run_analysis_on)
+    elif args.graphql:
+        print("GraphQL analysis is still a work in progress")
     # reset repo state back to master for subsequent runs
     reset_repo_state("competitive")
 
@@ -50,6 +55,12 @@ if __name__ == "__main__":
     # parser.add_argument("--b",
     #                     help="Business unit to run analysis on",
     #                     choices=['competitive', 'elite'])
+
+    # Mutually exclusive required args
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("-r", "--rest", action="store_true", help="REST API Parser")
+    group.add_argument("-b", "--bifrost", action="store_true", help="Bifrost API Parser")
+    group.add_argument("-g", "--graphql", action="store_true", help="GRAPHQL API Parser")
 
     parser.add_argument("--seed",
                         help="Clone a list of repos to a directory",

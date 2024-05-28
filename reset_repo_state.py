@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 def reset_repo_state(business_unit_to_run_analysis_on):
-    command = 'git checkout master'
+    command = 'git checkout master && git pull origin master'
     # TODO: theres probably a better way to handle retrieving a property of class than below
     business_unit = getattr(AllRepos, business_unit_to_run_analysis_on)
     for repo in business_unit:
