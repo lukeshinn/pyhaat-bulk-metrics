@@ -13,6 +13,7 @@ def reset_repo_state(business_unit_to_run_analysis_on):
     command = 'git checkout master && git pull origin master'
     # TODO: theres probably a better way to handle retrieving a property of class than below
     business_unit = getattr(AllRepos, business_unit_to_run_analysis_on)
+    print('=========== Running checkout master and pull on all repos ===========')
     for repo in business_unit:
         result = subprocess.Popen(
             command,
