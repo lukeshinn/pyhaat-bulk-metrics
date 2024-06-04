@@ -5,7 +5,7 @@ import logging
 import pandas as pd
 import os.path as path
 
-from IPython.display import display
+# from IPython.display import display
 
 
 logger = logging.getLogger(__name__)
