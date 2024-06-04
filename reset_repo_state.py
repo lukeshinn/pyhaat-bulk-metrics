@@ -1,8 +1,6 @@
 """ Checks out master for a list of repositories """
 
 import subprocess
-import json
-import csv
 import logging
 from seed_data import AllRepos
 

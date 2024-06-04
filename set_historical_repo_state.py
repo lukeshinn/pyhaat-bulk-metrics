@@ -1,12 +1,8 @@
-""" Gets the revision list for a given repository and checks out the first """
+""" Gets the revision list for a given repository and checks out the first commit before that date """
 
 import subprocess
-import json
-import csv
 import logging
 from seed_data import AllRepos
-
-# git checkout `git rev-list -n 1 --first-parent --before="2009-07-27 13:37" master`
 
 logger = logging.getLogger(__name__)
 
