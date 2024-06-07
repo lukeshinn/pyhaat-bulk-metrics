@@ -23,10 +23,8 @@ From the repo root
 
 ### TODOS and Bugs
 
-- Critical: if `"No endpoints found for {repoName}; skipping coverage check"` fires JSON loads will error out in analze_business_unit.py
 - Critical: master vs main on some repos
 - Add args params several places instead of hard coding business units/dates/etc
-- if the repo older than the date provided that could cause wierdness. Unsure of behavior
-- General code quality in analyze_business_unit.py. Namely why am I having to initiate new varaibles instead of perserving one data frame
 - update seed data with a larger list of repos
 - add support for ELITE repos or another business unit besides competitive
+- Make terminal stdout formatting more readable
