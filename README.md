@@ -5,7 +5,7 @@
 ### Usage
 
 1. Start virtual environment and install requirements
-2. run `python3 main.py {mm/dd/yyyy} -{r/b} --seed {competitive/elite}` (you only need to include the seed flag when you want to clone a list of repos from the seed data file
+2. run `python3 main.py startDate {mm/dd/yyyy} endDate {mm/dd/yyyy} frequency{d/m/y} requestType{-r/-b}`
 3. This will iterate through the seed_data.py AllRepos class attribute. Set the repository state at master for the given date. Then run pyhaat-coverage on a repo group. The results will be output to {-r/-b}metrics.csv
 4. There are a couple of critical issues listed in the todo.md
 
@@ -13,18 +13,17 @@
 
 From the repo root
 
-`python3 main.py 6/20/2023 -r --seed competitive`
+`python3 main.py 8/20/2023 5/20/2024 m -r`
+
+- This will read from the seed_data.py class attribute and run analysis once a month between the date ranges provided. The results will be output to -rmetrics.csv
 
 - You will see in the -rmetrics.csv generated that feedproduces, profiles, and organizations have low REST coverage numbers (0/5.1/0)
-
-`python3 main.py 5/20/2024 -r`
-
-- You will see in -rmetrics.csv an appended table with update metrics that match 5/20's coverage metrics
+- You will also see a pivot\_-rmetrics.csv this is experimental and doesn't seem to format correctly. There is a run_date row that is always blank which makes graphing an issue.
 
 ### TODOS and Bugs
 
 - Critical: master vs main on some repos
+- Critical: Validation for frequency arg. Right now it will break if you enter anything besides d/m/y
 - Add args params several places instead of hard coding business units/dates/etc
-- update seed data with a larger list of repos
 - add support for ELITE repos or another business unit besides competitive
 - Make terminal stdout formatting more readable

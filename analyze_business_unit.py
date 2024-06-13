@@ -28,10 +28,10 @@ def analyze_business_unit(api_format, start_date_to_run_analysis_on):
         print(data)
         formatted_data = format_dataframe_for_csv(data, api_format, start_date_to_run_analysis_on)
     formatted_data.to_csv(csv_file_path, index=False)
-    # pivot_table = pd.pivot_table(
-    #     formatted_data, index=["run_date"], columns=["service_name"], values=["rest_api_cov", "rest_endpoint_hit_rate"], aggfunc="sum", fill_value=0
-    # )
-    # formatted_data.to_csv(csv_file_path, index=False)
+    pivot_table = pd.pivot_table(
+        formatted_data, index=["run_date"], columns=["service_name"], values=["rest_api_cov", "rest_endpoint_hit_rate"], aggfunc="sum", fill_value=0
+    )
+    pivot_table.to_csv(f"pivot{csv_file_path}")
 
 
 def format_dataframe_for_csv(data, api_format, start_date_to_run_analysis_on):
