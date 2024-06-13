@@ -18,7 +18,7 @@ From the repo root
 - This will read from the seed_data.py class attribute and run analysis once a month between the date ranges provided. The results will be output to -rmetrics.csv
 
 - You will see in the -rmetrics.csv generated that feedproduces, profiles, and organizations have low REST coverage numbers (0/5.1/0)
-- You will also see a pivot\_-rmetrics.csv this is experimental and doesn't seem to format correctly. There is a run_date row that is always blank which makes graphing an issue.
+- You will also see a pivot-rmetrics.csv this is experimental and doesn't seem to format correctly. There is a run_date row that is always blank which makes graphing an issue.
 
 ### TODOS and Bugs
 
