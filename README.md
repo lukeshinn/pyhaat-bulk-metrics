@@ -5,6 +5,7 @@
 ### Installation
 
 From the repository root execute:
+
 `python3 -m venv venv`
 
 `source venv/bin/activate`
