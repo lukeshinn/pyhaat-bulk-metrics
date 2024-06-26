@@ -2,6 +2,14 @@
 
 ## :construction: This is a work in progress :construction:
 
+### Installation
+
+From the repository root execute:
+`python3 -m venv venv`
+`source venv/bin/activate`
+`pip3 install -r requirements.txt --no-cache-dir`
+`pip install --extra-index-url http://pypi.hudltools.com --trusted-host pypi.hudltools.com pyhaat`
+
 ### Usage
 
 1. Start virtual environment and install requirements
@@ -24,6 +32,7 @@ From the repo root
 
 - Critical: master vs main on some repos
 - Critical: Validation for frequency arg. Right now it will break if you enter anything besides d/m/y
+- Critical: If you dont clear out hudl_repos/competitive/etc on a new run it will
 - Add args params several places instead of hard coding business units/dates/etc
 - add support for ELITE repos or another business unit besides competitive
 - Make terminal stdout formatting more readable
