@@ -6,8 +6,11 @@
 
 From the repository root execute:
 `python3 -m venv venv`
+
 `source venv/bin/activate`
+
 `pip3 install -r requirements.txt --no-cache-dir`
+
 `pip install --extra-index-url http://pypi.hudltools.com --trusted-host pypi.hudltools.com pyhaat`
 
 ### Usage
