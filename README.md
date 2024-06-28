@@ -33,7 +33,7 @@ From the repository root execute:
 
 From the repo root
 
-`python3 get_historical_pyhaat_data.py ~/repos/pyhaat-bulk-metrics/hudl_repos 04/01/2024 06/01/2024 m`
+`python3 get_historical_pyhaat_data.py ~/Developer/HudlRepos 04/01/2024 06/01/2024 m`
 
 - You will see a generated -rmetrics.csv and -bmetrics.csv which will hold rest and bifrost data
 
