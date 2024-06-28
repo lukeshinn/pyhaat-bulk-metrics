@@ -22,13 +22,13 @@ From the repository root execute:
 
 #### Inputs
 
-| Input Name    | description                                                                                                                                                         | Example              |     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | --- |
-| DirectoryPath | System path that should point at a direcotry of repos                                                                                                               | `~/Developer/Github` |     |
-| StartDate     | Start date to run analysis on in mm/dd/yyy format                                                                                                                   | `01/01/2023`         |     |
-| EndDate       | End date to run analysis on in mm/dd/yyy format                                                                                                                     | `06/01/2023`         |     |
-| RequestType   |                                                                                                                                                                     | `-r`                 |     |
-| Frequency     | Cadence to run analysis on. Can be any option from [this param list](https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases) will work | `m`                  |     |
+| Input Name    | description                                                                                                                                               | Example              |     |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | --- |
+| DirectoryPath | System path that should point at a direcotry of repos                                                                                                     | `~/Developer/Github` |     |
+| StartDate     | Start date to run analysis on in mm/dd/yyy format                                                                                                         | `01/01/2023`         |     |
+| EndDate       | End date to run analysis on in mm/dd/yyy format                                                                                                           | `06/01/2023`         |     |
+| RequestType   | Request type soon to be deprecated                                                                                                                        | `-r`                 |     |
+| Frequency     | Cadence to run analysis on. Can be any option from [this param list](https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases) | `m`                  |     |
 
 ### Example
 
