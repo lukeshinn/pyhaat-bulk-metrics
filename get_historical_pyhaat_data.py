@@ -43,12 +43,14 @@ def main(args):
         create_seed_data(args.seed)
     for date in date_range:
         set_historical_repo_state(repo_dirs, date)
-        if args.rest:
-            analyze_business_unit(all_files_root, "-r", date)
-        elif args.bifrost:
-            analyze_business_unit(all_files_root, "-b", date)
-        elif args.graphql:
-            print("GraphQL analysis is still a work in progress")
+        analyze_business_unit(all_files_root, "-r", date)
+        analyze_business_unit(all_files_root, "-b", date)
+        # if args.rest:
+        #     analyze_business_unit(all_files_root, "-r", date)
+        # elif args.bifrost:
+        #     analyze_business_unit(all_files_root, "-b", date)
+        # elif args.graphql:
+        #     print("GraphQL analysis is still a work in progress")
     reset_repo_state(repo_dirs)
     repo_name = os.path.basename(args.repo_dir_path)
     # print(repo_name)
@@ -62,11 +64,11 @@ if __name__ == "__main__":
     parser.add_argument('end_date_to_run_analysis_on', type=expected_date_string, default=date.today().strftime('%m/%d/%Y'),  help="Date format must be in mm/dd/yyyy format")
     parser.add_argument('analysis_frequency', help="Frequency to run analysis for. Examples: D/M/Y")
 
-    # Mutually exclusive required args
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("-r", "--rest", action="store_true", help="REST API Parser")
-    group.add_argument("-b", "--bifrost", action="store_true", help="Bifrost API Parser")
-    group.add_argument("-g", "--graphql", action="store_true", help="GRAPHQL API Parser")
+    # # Mutually exclusive required args
+    # group = parser.add_mutually_exclusive_group(required=True)
+    # group.add_argument("-r", "--rest", action="store_true", help="REST API Parser")
+    # group.add_argument("-b", "--bifrost", action="store_true", help="Bifrost API Parser")
+    # group.add_argument("-g", "--graphql", action="store_true", help="GRAPHQL API Parser")
 
     parser.add_argument("--seed",
                         help="Clone a list of repos to a directory",

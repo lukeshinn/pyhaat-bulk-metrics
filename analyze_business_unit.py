@@ -23,7 +23,6 @@ def analyze_business_unit(all_files_root, api_format, start_date_to_run_analysis
         formatted_data = pd.concat([csv_data, incomming_data], join="inner")
     else:
         data = pd.DataFrame(data=bulk_coverage_dictionary['services'])
-        # print(data)
         formatted_data = format_dataframe_for_csv(data, api_format, start_date_to_run_analysis_on)
     formatted_data.to_csv(csv_file_path, index=False)
     # write_pivot_table(api_format, csv_file_path, formatted_data)
