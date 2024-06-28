@@ -11,6 +11,7 @@ import argparse
 import logging
 import pandas as pd
 import re
+import os
 from datetime import date
 from create_seed_data import create_seed_data
 from analyze_business_unit import analyze_business_unit
@@ -32,26 +33,31 @@ def expected_frequency_string(arg_value, pattern=re.compile("m")):
     return arg_value
 
 def main(args):
-    logging.basicConfig(filename='myapp.log', level=logging.INFO)
     date_range = pd.date_range(start=args.start_date_to_run_analysis_on, end=args.end_date_to_run_analysis_on, freq=args.analysis_frequency).strftime('%m/%d/%Y')
+    all_files = os.listdir(args.repo_dir_path)
+    all_files_root = os.path.join(args.repo_dir_path)
+    repo_dirs = [os.path.join(args.repo_dir_path, subdir) for subdir in all_files if os.path.isdir(os.path.join(args.repo_dir_path, subdir))]
+    repo_dirs = [repo_dir for repo_dir in repo_dirs if 'hudl' in repo_dir.split('/')[-1]]
+    reset_repo_state(repo_dirs)
     if args.seed:
         create_seed_data(args.seed)
     for date in date_range:
-        set_historical_repo_state("competitive", date)
+        set_historical_repo_state(repo_dirs, date)
         if args.rest:
-            analyze_business_unit("-r", date)
+            analyze_business_unit(all_files_root, "-r", date)
         elif args.bifrost:
-            analyze_business_unit("-b", date)
+            analyze_business_unit(all_files_root, "-b", date)
         elif args.graphql:
             print("GraphQL analysis is still a work in progress")
-        reset_repo_state("competitive")
-
-    print(args)
+    reset_repo_state(repo_dirs)
+    repo_name = os.path.basename(args.repo_dir_path)
+    # print(repo_name)
 
 if __name__ == "__main__":
     """ This is executed when run from the command line """
     parser = argparse.ArgumentParser()
 
+    parser.add_argument("repo_dir_path", help="Repo source directory with controller files and Antioch tests to analyze")
     parser.add_argument('start_date_to_run_analysis_on', type=expected_date_string, default=date.today().strftime('%m/%d/%Y'),  help="Date format must be in mm/dd/yyyy format")
     parser.add_argument('end_date_to_run_analysis_on', type=expected_date_string, default=date.today().strftime('%m/%d/%Y'),  help="Date format must be in mm/dd/yyyy format")
     parser.add_argument('analysis_frequency', help="Frequency to run analysis for. Examples: D/M/Y")

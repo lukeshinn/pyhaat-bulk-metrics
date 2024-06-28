@@ -1,0 +1,211 @@
+{
+  "Hudl_BU_Structure": {
+    "Service_List": {
+      "AML": {
+        "Gundam": ["hudl-annotations", "hudl-inference"]
+      },
+      "Business Operations": [
+        "hudl-getpaid",
+        "hudl-groupmanagement",
+        "hudl-netsuite",
+        "hudl-packagebuilder",
+        "hudl-payments",
+        "hudl-signup",
+        "hudl-addressvalidation",
+        "hudl-taxes",
+        "hudl-assistcreditmanagement",
+        "hudl-billinggateway",
+        "hudl-billinglinkage",
+        "hudl-featuretoggles",
+        "hudl-hardware",
+        "hudl-internalsignup",
+        "hudl-productaccess",
+        "hudl-provisioningorchestrator",
+        "hudl-revenuesharing",
+        "hudl-salesforce",
+        "hudl-support",
+        "hudl-togglesmanagement"
+      ],
+      "Competitive": {
+        "No Team": ["hudl-engineeronboarding", "hudl-speedtest"],
+        "Fan": {
+          "VGS": [
+            "hudl-broadcasts",
+            "hudl-competitions",
+            "hudl-fansearch",
+            "hudl-organizations",
+            "hudl-schedules",
+            "hudl-urls",
+            "hudl-jobs"
+          ],
+          "Kitten Mittons": [
+            "hudl-profiles",
+            "hudl-feedconsumer",
+            "hudl-communitysearch",
+            "hudl-feedproducer",
+            "hudl-highlights",
+            "hudl-maxpreps",
+            "hudl-performancecenter",
+            "hudl-recommendations"
+          ],
+          "Fan Team 6": ["hudl-ticketing", "hudl-venues"],
+          "Platypus": [
+            "bf-analytics-pwebapi",
+            "bf-citylink",
+            "bf-ms-server",
+            "bf-platypus",
+            "bf-stack-rts",
+            "bf-vvms-scaler"
+          ],
+          "Flying Bison": ["hudl-communityrelationships", "hudl-notify"],
+          "Truckers": ["hudl-livestreaming", "hudl-scoreboard"]
+        },
+        "Club": {
+          "Supernova": [
+            "hudl-collegelibrary",
+            "hudl-emails",
+            "hudl-files",
+            "hudl-record",
+            "hudl-relationships"
+          ],
+          "PrimeTime": [
+            "hudl-push",
+            "hudl-streamintegration",
+            "hudl-messaging"
+          ],
+          "BBQ": [
+            "hudl-reports",
+            "hudl-teams",
+            "hudl-videospa",
+            "hudl-onboarding"
+          ],
+          "Squad 404": [
+            "hudl-adminsearch",
+            "hudl-clips",
+            "hudl-coresearch",
+            "hudl-notifications"
+          ]
+        },
+        "High School": {
+          "Your Brand Here": [
+            "hudl-automaticcapture",
+            "hudl-classicfacade",
+            "hudl-playtools",
+            "hudl-fbplaycardsearch",
+            "hudl",
+            "hudl-statistics",
+            "hudl-videoediting"
+          ],
+          "Web Gems": [
+            "hudl-customersettings",
+            "hudl-effects",
+            "hudl-inferenceorchestrator",
+            "hudl-shareables"
+          ],
+          "Stunner": [
+            "hudl-library",
+            "hudl-storagemanagement",
+            "hudl-exchanges"
+          ]
+        },
+        "Data Generation": {
+          "Marvin": [
+            "hudl-assistedbreakdown",
+            "hudl-assistqueuesearch",
+            "hudl-augmentation",
+            "hudl-taggingsessions",
+            "hudl-leroy"
+          ]
+        }
+      },
+      "Elite": {
+        "EliteSportsPlatform": {
+          "Blue Steel": ["hudl-elitelicenser"],
+          "Other": [
+            "hudl-atlas",
+            "hudl-dataconverter",
+            "hudl-externalingest",
+            "hudl-gslconnectors",
+            "hudl-mediasearch",
+            "hudl-metropole",
+            "hudl-momentssearch",
+            "hudl-stats",
+            "hudl-nautilus",
+            "hudl-watermarks",
+            "hudl-breakdowns",
+            "hudl-gslaccess",
+            "hudl-gslmediacontext"
+          ]
+        },
+        "Global Football and Rugby": {
+          "Arkham": ["hudl-pigeonnotificator", "hudl-scarapi"],
+          "Cucumber Solvers": ["hudl-wyscoutingest"],
+          "Peps Assistants": ["hudl-dvms"]
+        },
+        "Human Performance": {
+          "Blizzard": ["hudl-volleymetrics", "hudl-volleymetricstableauapi"],
+          "Voyager": ["hudl-humanperformance"]
+        },
+        "North American Sports": {
+          "Tom Brady Bunch": [
+            "hudl-recruit",
+            "hudl-recruitsearch",
+            "hudl-mediacomposition"
+          ],
+          "Zamboni": [
+            "hudl-nhlhitsingest",
+            "hudl-sportscode",
+            "hudl-activitytracking"
+          ]
+        }
+      },
+      "Hardware": {
+        "Flex Experience": ["hudl-cellularconnectivity"],
+        "Multi Angle Capture": [
+          "hudl-focusremotecontrol",
+          "hudl-satellitecameras"
+        ],
+        "Platform": {
+          "Lumos": [
+            "hudl-hardwareiot",
+            "hudl-deviceuploading",
+            "hudl-automaticcapture",
+            "hudl-deviceauth",
+            "hudl-wimudevice"
+          ]
+        }
+      },
+      "Platform": {
+        "No Team": ["hudl-microservicetemplate"],
+        "Core Video": {
+          "Boat": ["hudl-videotestharness", "hudl-media", "hudl-video"],
+          "Betamax": ["hudl-videotestharness", "hudl-media", "hudl-video"]
+        },
+        "Web Stack": {
+          "Bad Batch": [
+            "hudl-caas",
+            "hudl-users",
+            "hudl-logging",
+            "hudl-marvelplatformtestharness",
+            "hudl-platform"
+          ],
+          "Kaizen": [
+            "hudl-auth",
+            "hudl-authtokentestapp",
+            "hudl-globalization",
+            "hudl-graphql",
+            "hudl-graphqlreplay",
+            "hudl-staticdata",
+            "hudl-swaggerui"
+          ],
+          "Vandelay": [],
+          "Mostly Harmless": ["hudl-bifrostproxy"]
+        },
+        "Mobile and Front-End": {
+          "Mandalorians": ["hudl-ui"],
+          "Vision": ["rn-hudl"]
+        }
+      }
+    }
+  }
+}

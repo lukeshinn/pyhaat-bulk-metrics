@@ -4,6 +4,7 @@
 
 ### Installation
 
+!You must have Github SSH setup. If `git clone git@github.com:hudl/hudl-organizations.git` fails you likely dont have SSH setup
 From the repository root execute:
 
 `python3 -m venv venv`

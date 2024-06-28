@@ -1,8 +1,12 @@
 class AllRepos(object):
+
     competitive = [
-        "hudl-feedproducer",
-        "hudl-profiles",
+        "hudl-broadcasts",
+        "hudl-competitions",
+        "hudl-fansearch",
         "hudl-organizations",
+        "hudl-schedules",
+        "hudl-urls",
     ]
 
     elite = [
@@ -10,3 +14,26 @@ class AllRepos(object):
         "hudl-exchanges",
         "hudl-gslconnectors",
     ]
+
+
+# Kitten mittons
+# competitive = [
+#     "hudl-communitysearch",
+#     "hudl-feedconsumer",
+#     "hudl-feedproducer",
+#     "hudl-highlights",
+#     "hudl-maxpreps",
+#     "hudl-performancecenter",
+#     "hudl-profiles",
+#     "hudl-recommendations",
+# ]
+
+# VGS
+# competitive = [
+#     "hudl-broadcasts",
+#     "hudl-competitions",
+#     "hudl-fansearch",
+#     "hudl-organizations",
+#     "hudl-schedules",
+#     "hudl-urls",
+# ]
