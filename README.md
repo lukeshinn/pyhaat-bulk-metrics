@@ -34,18 +34,13 @@ From the repository root execute:
 
 From the repo root
 
-`python3 main.py 8/20/2023 5/20/2024 m -r`
-
-- This will read from the seed_data.py class attribute and run analysis once a month between the date ranges provided. The results will be output to -rmetrics.csv
+`python3 get_historical_pyhaat_data.py ~/repos/pyhaat-bulk-metrics/hudl_repos 04/01/2024 06/01/2024 -r m`
 
 - You will see in the -rmetrics.csv generated that feedproduces, profiles, and organizations have low REST coverage numbers (0/5.1/0)
 - You will also see a pivot-rmetrics.csv this is experimental and doesn't seem to format correctly. There is a run_date row that is always blank which makes graphing an issue.
 
 ### TODOS and Bugs
 
-- Critical: master vs main on some repos
-- Critical: Validation for frequency arg. Right now it will break if you enter anything besides d/m/y
-- Critical: If you dont clear out hudl_repos/competitive/etc on a new run it will
-- Add args params several places instead of hard coding business units/dates/etc
-- add support for ELITE repos or another business unit besides competitive
+- :bug: Critical: master vs main on some repos
+- :bug: Critical: Validation for frequency arg. Right now it will break if you enter anything besides d/m/y
 - Make terminal stdout formatting more readable
