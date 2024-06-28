@@ -4,7 +4,7 @@
 
 ### Installation
 
-!You must have Github SSH setup. If `git clone git@github.com:hudl/hudl-organizations.git` fails you likely dont have SSH setup
+:bangbang: You must have Github SSH setup. If `git clone git@github.com:hudl/hudl-organizations.git` fails you likely dont have SSH setup
 From the repository root execute:
 
 `python3 -m venv venv`
@@ -17,10 +17,17 @@ From the repository root execute:
 
 ### Usage
 
-1. Start virtual environment and install requirements
-2. run `python3 main.py startDate {mm/dd/yyyy} endDate {mm/dd/yyyy} frequency{d/m/y} requestType{-r/-b}`
-3. This will iterate through the seed_data.py AllRepos class attribute. Set the repository state at master for the given date. Then run pyhaat-coverage on a repo group. The results will be output to {-r/-b}metrics.csv
-4. There are a couple of critical issues listed in the todo.md
+`python3 get_historical_pyhaat_data.py DirectoryPath StartDate EndDate RequestType Frequency`
+
+#### Inputs
+
+| Input Name    | description                                                                                                                                                         | Example              |     |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | --- |
+| DirectoryPath | System path that should point at a direcotry of repos                                                                                                               | `~/Developer/Github` |     |
+| StartDate     | Start date to run analysis on in mm/dd/yyy format                                                                                                                   | `01/01/2023`         |     |
+| EndDate       | End date to run analysis on in mm/dd/yyy format                                                                                                                     | `06/01/2023`         |     |
+| RequestType   |                                                                                                                                                                     | `-r`                 |     |
+| Frequency     | Cadence to run analysis on. Can be any option from [this param list](https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases) will work | `m`                  |     |
 
 ### Example
 
