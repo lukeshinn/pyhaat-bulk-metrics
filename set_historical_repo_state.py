@@ -1,19 +1,14 @@
 """ Gets the revision list for a given repository and checks out the first commit before that date """
 
 import subprocess
-import logging
-from seed_data import AllRepos
-
-logger = logging.getLogger(__name__)
-Debug = False
+from analysis_logging import configure_logger
 
 
 def set_historical_repo_state(repo_dirs, date_to_run_analysis_on):
+    logger = configure_logger(True)
     command = f'git checkout `git rev-list -n 1 --first-parent --before="{date_to_run_analysis_on}" master`'
-    print(command) if Debug else None
-    # business_unit = getattr(AllRepos, business_unit_to_run_analysis_on)
+    logger.info(f'Running... {command}')
     for repo in repo_dirs:
-        print(repo) if Debug else None
         result = subprocess.Popen(
             command,
             shell=True,

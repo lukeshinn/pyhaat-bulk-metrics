@@ -4,16 +4,19 @@ import csv
 import logging
 import pandas as pd
 import os.path as path
-
+import re
+from analysis_logging import configure_logger
 
 logger = logging.getLogger(__name__)
 
 
 def analyze_business_unit(all_files_root, api_format, start_date_to_run_analysis_on):
+    logger = configure_logger(True)
     command = ['pyhaat-coverage', api_format, '-l', '-rg', all_files_root]
-    print(f"==== Running {command} ====")
-    print(f"==== this could take a bit to run..... ====")
+    logger.info(f"Running {command}")
     bulk_coverage_output = subprocess.run(command, stdout=subprocess.PIPE).stdout.decode('utf-8').replace("'", '"')
+    parse_stdout_for_no_endpoints_found(bulk_coverage_output)
+    logger.info(bulk_coverage_output)
     bulk_coverage_dictionary = json.load(open("results.json", "r"))
     csv_file_path = f'{api_format}metrics.csv'
     if path.exists(csv_file_path):
@@ -26,6 +29,16 @@ def analyze_business_unit(all_files_root, api_format, start_date_to_run_analysis
         formatted_data = format_dataframe_for_csv(data, api_format, start_date_to_run_analysis_on)
     formatted_data.to_csv(csv_file_path, index=False)
     # write_pivot_table(api_format, csv_file_path, formatted_data)
+
+
+def parse_stdout_for_no_endpoints_found(std_output):
+    services_without_coverage = []
+    for line in std_output.splitlines():
+        if line.startswith('No endpoints found'):
+            parts = line.split(';')
+            service_name = parts[0].split()[-1]
+            services_without_coverage.append(service_name)
+    return services_without_coverage
 
 
 def write_pivot_table(api_format, csv_file_path, data):
